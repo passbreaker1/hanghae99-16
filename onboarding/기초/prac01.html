@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>띵동코딩 - 클론코딩</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        *{
+            font-family: 'Nanum Pen Script', cursive; 
+        }
+        body{
+            height: 200vh;
+
+        }
+        .gnb{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+        .gnb__login{
+            cursor: pointer;
+            font-size: 30px;
+        }
+        .gnb__underLine{
+            border: 1px solid grey;
+            opacity: 0.1;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+        .main h3 {
+            text-align: center;
+            line-height:  2;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        .main h1 {
+            font-weight: 800;
+            font-size: 50px;
+        }
+        .main img{
+            width: 100vw;
+        }
+        .cta{
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 1200px;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 10px;
+            left: calc(50% - 600px);
+            box-shadow: 0px 0px 10px 0px lightgray;
+        }
+        .cta span {
+            color: orange;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        .cta p {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .cta button {
+            background-color: orange;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            color: white;
+            width: 250px;
+            font-size: 20px;
+            margin: 10px 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <div class="gnb__img">
+            <img src="https://ddingdong.spartacodingclub.kr/images/common/logo-tb.svg">
+        </div>
+        <div class="gnb__login">
+            <span>로그인</span>
+        </div>
+    </div>
+    <hr class="gnb__underLine">
+    <div class="main">
+        <h3>매주 월요일, 내 강의실에 찾아오는</br> 온라인 코딩학습지</h3>
+        <h1>띵동코딩이 도착했어요!</h1>
+        <img src="https://media-sparta.s3.ap-northeast-2.amazonaws.com/media/images/hero.png">
+    </div>
+    <div class="cta">
+        <p><span>첫 달 만 원</span> 혜택 특별 연장, 선착순 100명 한정!</p>
+        <button>만원으로 시작하기</button>
+    </div>
+</body>
+</html>

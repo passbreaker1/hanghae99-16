@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>띵동코딩 - 로그인</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        *{
+            font-family: 'Nanum Pen Script', cursive;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .loginPage{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid lightgray;
+            width: 300px;
+            height: 400px;
+            box-sizing: border-box;
+            padding: 0px 40px;
+        }
+        .loginPage__img{
+            margin-bottom: 10px;
+            margin-top: 50px;
+        }
+        .loginPage__comment{
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        .loginPage__btn button{
+            margin-bottom: 20px;
+            margin-top: 30px;
+            width: 100%;
+            padding: 15px;
+            background-color: #FAE100;
+            border: none;
+            border-radius: 5px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .loginPage__emailBtn button{
+            width: 100%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loginPage">
+        <div class="loginPage__img">
+            <img src="https://ddingdong.spartacodingclub.kr/images/common/logo-tb.svg">
+        </div>
+        <div class="loginPage__comment">
+            <p>매주 월요일,<br/> 내 강의실에 찾아오는<br/> 코딩 학습지</p>
+        </div>
+        <div class="loginPage__btn">
+            <button>카카오로 1초만에 시작하기</button>
+        </div>
+        <div class="loginPage__emailBtn">
+            <button>이메일로 시작하기</button>
+        </div>
+    </div>
+</body>
+</html>
