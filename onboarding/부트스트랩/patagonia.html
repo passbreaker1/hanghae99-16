@@ -65,6 +65,41 @@
             font-size: 24px;
             margin-right: 20px;
         }
+        .main img {
+            width: 100%;
+        }
+        .items {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px;
+        }
+        .imgs{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 30px;
+            margin-right: auto;
+            margin-left: 100px;
+        }
+        .card{
+            margin-right: 10px;
+        }
+        .list-group span {
+            font-size: 24px;
+            margin-left: 10px;
+            color: black;
+        }
+
+        .card-text span{
+            color: black;
+        }
+        .form-select{
+            width: 120px;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -92,11 +127,58 @@
             </div>
     </div>
     <div class="main">
-			메인 사진
+		<img src="https://media-sparta.s3.ap-northeast-2.amazonaws.com/media/images/patagonia_main_banner.png">
     </div>
     <div class="items">
-			상품(목록그룹/카드/드롭다운)들어갈 곳
-    </div>
-    
+		<ul class="list-group list-group-flush">
+            <span>WOMEN'S</span>
+            <li class="list-group-item">신상품</li>
+            <li class="list-group-item">재킷 & 베스트</li>
+            <li class="list-group-item">플리스</li>
+            <li class="list-group-item">스웨트셔츠 & 후디</li>
+            <li class="list-group-item">셔츠</li>
+            <li class="list-group-item">티셔츠</li>
+            <li class="list-group-item">팬츠 & 레깅스</li>
+            <li class="list-group-item">모자 & 액세서리</li>
+        </ul>
+        <div class="imgs">
+         <div class="card" style="width: 18rem;">
+            <img src="https://media-sparta.s3.ap-northeast-2.amazonaws.com/media/images/patagonia_item_1.png"
+                class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">
+                    <span>Women Stand Up Overalls</span></br>
+                    <span>₩159,000</span>
+                </p>
+            </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+            <img src="https://media-sparta.s3.ap-northeast-2.amazonaws.com/media/images/patagonia_item_2.png"
+                class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">
+                    <span>Women Ridge Flow Shirt</span></br>
+                    <span>₩89,000</span>
+                </p>
+            </div>
+         </div>
+         <div class="card" style="width: 18rem;">
+            <img src="https://media-sparta.s3.ap-northeast-2.amazonaws.com/media/images/patagonia_item_3.png"
+                class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">
+                    <span>Women All Seasons Hemp Canvas Shorts</span></br>
+                    <span>₩119,000</span>
+                </p>
+            </div>
+         </div>
+     </div>
+     <select class="form-select" aria-label="Default select example">
+        <option selected>상품정렬</option>
+        <option value="1">최신순</option>
+        <option value="2">높은 가격순</option>
+        <option value="3">낮은 가격순</option>
+      </select>
+  </div>
 </body>
 </html>

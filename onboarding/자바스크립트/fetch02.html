@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>띵동코딩 - fetch 연습</title>
+    <style>
+        .client {
+            margin: 10px 10px;
+        }
+    </style>
+    <script>
+        function mise() {
+            $('#seoulBicycle').empty();
+            let url = 'http://spartacodingclub.shop/sparta_api/seoulbike'
+
+            fetch(url).then(res => res.json()).then((data) => {
+                let rows = data['getStationList']['row']
+                for (let i = 0; i < rows.length; i++) {
+                    let rack_name = rows[i]['stationName'];
+                    let bike_cnt = rows[i]['parkingBikeTotCnt'];
+                    let rack_count = rows[i]['rackTotCnt'];
+
+                    let temp_html = `<tr>
+                                    <td>거치대 위치 : ${bike_cnt}. ${rack_name}</td>
+                                    <td>현재 거치된 따릉이 수 : ${rack_count}</td>
+                                    </tr>`
+                    
+
+                    $('#seoulBicycle').append(temp_html)
+                    
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <button onclick="mise()">서울시 따릉이 정보</button>
+        <p>모든 위치의 따릉이 현황을 보여주세요</p>
+        <ul id="seoulBicycle">
+            <tr>
+                <td>거치대 위치 : 102. 망원역 1번출구 앞</td>
+                <td>현재 거치된 따릉이 수 : 16</td>
+            </tr>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>띵동코딩 - 로그인</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        * {
+            font-family: "Pretendard",serif;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 300px;
+            margin: 70px auto auto auto;
+            padding: 80px 50px 50px 50px;
+
+            border: 1px solid lightgray;
+            border-radius: 8px;
+        }
+        .wrap > img {
+            width: 90px;
+            height: 46px;
+            margin-bottom: 30px;
+
+            margin-right: auto;
+        }
+        .wrap > p {
+            font-size: 24px;
+            color: #26343d;
+
+            margin-right: auto;
+            line-height: 1.5;
+
+            margin-top: 10px;
+        }
+        .wrap > button {
+            width: 320px;
+            height: 60px;
+            border-radius: 8px;
+            border: none;
+            background-color: #ffe237;
+            cursor: pointer;
+            color: #1c1d1e;
+            font-size: 16px;
+            font-weight: bold;
+
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+        .wrap > span {
+            color: #26343d;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .email {
+            display: none;
+        }
+
+        .email > p {
+            margin-right: auto;
+            font-weight: bold;
+        }
+
+        .email > input {
+            width: 292px;
+            height: 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid rgb(219, 221, 224);
+        }
+
+        .email > button {
+            width: 320px;
+            height: 60px;
+            background-color: lightgray;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            color: white;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+						background-color: black;
+            color: white;
+        }
+
+        .email > span {
+            font-size: 14px;
+            color: rgb(38, 52, 61);
+
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="https://ddingdong.spartacodingclub.kr/images/common/logo-tb.svg">
+        <p>
+            매주 월요일,<br/>
+            내 강의실에 찾아오는<br/>
+            코딩 학습지
+        </p>
+        <button>카카오로 1초만에 시작하기</button>
+        <span>이메일로 시작하기</span>
+        <div class="email">
+            <p>이메일</p>
+            <input type="text" placeholder="이메일 주소를 입력해주세요">
+            <button>로그인하기</button>
+            <span>이메일이 기억나지 않아요.</span>
+        </div>
+    </div>
+</body>
+</html>
