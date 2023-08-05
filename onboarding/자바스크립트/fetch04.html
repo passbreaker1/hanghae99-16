@@ -24,8 +24,9 @@
         }
     </style>
     <script>
+        let cnt = 0;
         function movieReviews() {
-            let cnt = 0;
+            
 			let url = 'http://spartacodingclub.shop/post'
             fetch(url).then(res => res.json()).then((data) => {
                 cnt ++
