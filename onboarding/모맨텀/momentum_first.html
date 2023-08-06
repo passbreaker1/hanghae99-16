@@ -77,9 +77,9 @@
             Hello, what`s your name?
         </div>
         <!-- 이름 입력창 -->
-        <div class="name">
-            <input type="text"><i class="fa-solid fa-angles-right"></i>
-        </div>
+        <form class="name" action="./momentum_second.html">
+            <input type="text" class="userName"><a href="./momentum_second.html" onclick="return chk_form()"><i class="fa-solid fa-angles-right"></i></a>
+        </form>
     </div>
 
 </body>
@@ -98,7 +98,15 @@
     bgImage.backgroundRepeat = "no-repeat"
     bgImage.backgroundAttachment = "fixed"
 
-    //아이콘 클릭 시 다음 페이지로
+    //input에 이름입력하면 다음화면에 표시하는건 어떻게 하지..
 
+    function chk_form() {
+    if(document.querySelector('.userName').value==''){
+	alert("성명을 입력해주십시오.");
+	  return false;
+    }else{
+        document.querySelector('.name').submit()
+    }
+    }
 </script>
 </html>
