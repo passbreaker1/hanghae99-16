@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\김지원\Desktop\sparta\sparta2\projects\03.pedia\venv
+set VIRTUAL_ENV=C:\Users\user\OneDrive\바탕 화면\hanghae99-16\web-develope-synthesize\sparta2\projects\03.pedia\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
