@@ -95,34 +95,56 @@
       });
 
       function show_bucket() {
-        fetch('/bucket').then(res => res.json()).then(data => {
-                let rows = data['result']
-                     
-                $('#bucket-list').empty()
-                rows.forEach((a)=>{
-                let bucketList = a['bucketlist']
+        fetch("/bucket")
+          .then((res) => res.json())
+          .then((data) => {
+            let rows = data["result"];
 
-                
-                
-                let temp_html = `<li>
-                                    <h2>✅${bucketList}</h2>
-                                 </li>`
-                $('#bucket-list').append(temp_html)
-              })
-            })
+            $("#bucket-list").empty();
+            rows.forEach((a) => {
+              let bucketList = a["bucketlist"];
+              let done = a["done"];
+              if (done == 0) {
+                let temp_html = `<li id="list">
+                                  <h2 class="h2">✅${bucketList}</h2>
+                                  <button type="button" class="btn btn-outline-info" onclick="save_done()">완료!</button>
+                               </li>`;
+                $("#bucket-list").append(temp_html);
+              } else {
+                let temp_html = `<li id="list">
+                                  <h2 class="h2">✅${bucketList} 완료!!</h2>
+                               </li>`;
+                $("#bucket-list").append(temp_html);
+              }
+            });
+          });
       }
 
-      function save_bucket() {
-        let bucket = $('#bucket').val()
+      function save_done() {
+        const done = 1;
         let formData = new FormData();
-        formData.append("bucket_give", bucket);
+        formData.append("done_give", done);
 
-        fetch('/bucket', {method: "POST",body: formData,}).then((response) => response.json()).then((data) => {
+        fetch("/done", { method: "POST", body: formData })
+          .then((response) => response.json())
+          .then((data) => {
             alert(data["msg"]);
             window.location.reload();
           });
       }
 
+      function save_bucket() {
+        let bucket = $("#bucket").val();
+        let formData = new FormData();
+        formData.append("bucket_give", bucket);
+
+        fetch("/bucket", { method: "POST", body: formData })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data["msg"]);
+            window.location.reload();
+          });
+      }
     </script>
   </head>
   <body>
@@ -137,12 +159,25 @@
           type="text"
           placeholder="이루고 싶은 것을 입력하세요"
         />
-        <button onclick="save_bucket()" type="button" class="btn btn-outline-primary">기록하기</button>
+        <button
+          onclick="save_bucket()"
+          type="button"
+          class="btn btn-outline-primary"
+        >
+          기록하기
+        </button>
       </div>
     </div>
     <div class="mybox" id="bucket-list">
-      <li>
-        <h2>✅ 호주에서 스카이다이빙 하기</h2>
+      <li id="list">
+        <h2 class="h2">✅${bucketList}</h2>
+        <button
+          type="button"
+          class="btn btn-outline-info"
+          onclick="save_done()"
+        >
+          완료!
+        </button>
       </li>
     </div>
   </body>
