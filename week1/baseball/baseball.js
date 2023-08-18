@@ -24,7 +24,7 @@ function randomNumbers(){
     generateNumbers=numbers
 }
 
-// 입력값과 랜덤한 숫자 3개를 비교해야 하는데 랜덤숫자 만드는 함수를 어떻게 가지고 오지..
+
 // strike, ball체크(제출버튼 누르면)
 let round = 0;
 function compareNumbers(){
