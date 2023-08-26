@@ -27,13 +27,13 @@ let signs = [
 ];
 console.log(solution(arr1, arr2, signs));
 
-// ------------------------------------------
-// console.log(arr1[0][0]+arr2[0][0])
-// console.log(arr1[0][1]+arr2[0][1])
-// console.log(arr1[1][0]+arr2[1][0])
-// console.log(arr1[1][1]+arr2[1][1]) ....
+// // ------------------------------------------
+// // console.log(arr1[0][0]+arr2[0][0])
+// // console.log(arr1[0][1]+arr2[0][1])
+// // console.log(arr1[1][0]+arr2[1][0])
+// // console.log(arr1[1][1]+arr2[1][1]) ....
 
-// arr1[0] → [5,7,1]
-// arr1[0][0] → 5
-// 이중 반목문을 사용해서 각 요소들 더한다.
-// 단, signs가 false면 - true면 + 니까 조건문 사용
+// // arr1[0] → [5,7,1]
+// // arr1[0][0] → 5
+// // 이중 반목문을 사용해서 각 요소들 더한다.
+// // 단, signs가 false면 - true면 + 니까 조건문 사용

@@ -1,21 +1,30 @@
 function solution(arr, n) {
-  const str = [...new Set(arr)];
-  console.log(str);
-  str.sort((a, b) => {
+  const str = [];
+  let answer = [];
+
+  arr.forEach((a) => {
+    if (!answer.includes(a)) {
+      answer.push(a);
+    } else {
+      str.push(a);
+    }
+  });
+  const ary = answer.filter((v) => {
+    return !str.includes(v);
+  });
+  console.log(str, answer);
+  ary.sort((a, b) => {
     if (a[n] === b[n]) {
       return a.localeCompare(b);
     } else {
       return a[n].localeCompare(b[n]);
     }
   });
-  return str;
+  return ary;
 }
 let arr = ["coke", "water", "glass", "dog", "dog", "yogurt", "vitamin"];
 let n = 2;
 console.log(solution(arr, n));
-
-// Set()함수를 이용해서 중복자료를 제거.
-// 그냥 사용하면 object형태를 반환하기 때문에 다시 배열로 묶어줘야함.
 
 // 그 다음 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하는 방법.
 // 혹시 n번째 문자가 중복되면 사전순 정렬.
