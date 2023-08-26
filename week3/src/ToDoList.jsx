@@ -9,9 +9,6 @@ function ToDoList() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const notToDo = toDoList.filter((item) => item.isDone == false);
-  const doneToDo = toDoList.filter((item) => item.isDone == true);
-
   const changeTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -32,15 +29,18 @@ function ToDoList() {
   };
 
   const onToggle = (id) => {
-    const newToDoList = notToDo.map((item) => {
+    const newToDoList = toDoList.map((item) => {
       if (id == item.id) {
         return { ...item, isDone: !item.isDone };
       } else {
-        return toDoList;
+        return item;
       }
     });
     setToDoList(newToDoList);
   };
+
+  const notToDo = toDoList.filter((item) => item.isDone == false);
+  const doneToDo = toDoList.filter((item) => item.isDone == true);
 
   return (
     <div className={styles.main}>
