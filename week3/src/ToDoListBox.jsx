@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ToDoListBox.module.css";
 
-function ToDoListBox({ item, onToggle }) {
+function ToDoListBox({ item, onToggle, removeBtn }) {
   if (item.title == "") {
     return null;
   }
@@ -11,10 +11,10 @@ function ToDoListBox({ item, onToggle }) {
       <br />
       {item.content}
       <br />
-      <button className={styles.remove} onClick={() => onToggle(!item.id)}>
+      <button className={styles.remove} onClick={removeBtn}>
         삭제하기!
       </button>
-      <button className={styles.succes} onClick={() => onToggle(item.id)}>
+      <button className={styles.succes} onClick={onToggle}>
         완료!
       </button>
     </div>

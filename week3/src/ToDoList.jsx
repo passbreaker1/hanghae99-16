@@ -4,7 +4,7 @@ import ToDoListBox from "./ToDoListBox";
 
 function ToDoList() {
   const [toDoList, setToDoList] = useState([
-    { id: "", title: "", content: "", isDone: false },
+    { id: 0, title: "", content: "", isDone: false },
   ]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -32,13 +32,14 @@ function ToDoList() {
   };
 
   const onToggle = (id) => {
-    const newToDoList = notToDo.map((item) => {
-      if (id == item.id) {
-        return { ...item, isDone: !item.isDone };
-      } else {
-        return toDoList;
-      }
-    });
+    const newToDoList = toDoList.map((item) =>
+      item.id === id ? { ...item, isDone: !item.isDone } : item
+    );
+    setToDoList(newToDoList);
+  };
+
+  const removeBtn = (id) => {
+    const newToDoList = toDoList.filter((item) => item.id !== id);
     setToDoList(newToDoList);
   };
 
@@ -57,13 +58,23 @@ function ToDoList() {
         <div className={styles.working}>Working..🔥</div>
         <div className={styles.app_style}>
           {notToDo.map((item) => (
-            <ToDoListBox item={item} key={item.id} onToggle={onToggle} />
+            <ToDoListBox
+              item={item}
+              key={item.id}
+              removeBtn={() => removeBtn(item.id)}
+              onToggle={() => onToggle(item.id)}
+            />
           ))}
         </div>
         <div className={styles.done}>Done..!🥳</div>
         <div className={styles.app_style}>
           {doneToDo.map((item) => (
-            <ToDoListBox item={item} key={item.id} onToggle={onToggle} />
+            <ToDoListBox
+              item={item}
+              key={item.id}
+              removeBtn={() => removeBtn(item.id)}
+              onToggle={() => onToggle(item.id)}
+            />
           ))}
         </div>
       </div>
@@ -76,7 +87,15 @@ export default ToDoList;
   /* 질문사항. */
 }
 {
-  /* 왜? 이벤트 리스너 안에서 매개변수를 주려면 arrow function으로 감싸줘야하는지 */
+  /* 왜? 이벤트 리스너 안에서 매개변수를 주려면 arrow function으로 감싸줘야하는지 → 그냥 함수만 넣으면 바로 실행인데,
+  추가로 익명의 함수를 씌워서 누른 다음 실행되도록? */
+}
+{
+  /* removeBtn={() => removeBtn(item.id)}
+     onToggle={() => onToggle(item.id)} 부모요소에서 이렇게 넘겨줘야 하는 이유 */
+}
+{
+  /* onToggle 쪽 코드 리뷰.. */
 }
 {
   /* 컴포넌트를 분리하는 부분 다시 확인 필요. */
