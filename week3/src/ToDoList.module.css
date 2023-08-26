@@ -1,0 +1,55 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body {
+  width: 1200px;
+  height: 800px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid lightgrey;
+  padding: 5px;
+}
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 20px;
+}
+.input > button {
+  margin-left: auto;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.input > input {
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.working {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.done {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.app_style {
+  height: 200px;
+}
